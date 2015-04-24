@@ -101,9 +101,7 @@ std::vector<int> surfMatch (cv::Mat image1,cv::Mat image2, int lastX, int lastY)
         //1. det between every pair should share same sign.
         //2. the vary range should be limited in narrow area.
         if((detY*lastY>=0)&&(abs(detY) < abs(lastY)+10)){
-            std::cout << "inside" << std::endl;
             if ((detX*lastX>=0)&&((lastX > 0 ? (abs(detX)< image2.cols):(abs(detX) > (image1.cols-image2.cols))))){
-            std::cout << "inside2" << std::endl;
 
             kGainX = pX/(pX+R);
             kalmanPX = (1-kGainX*pX);
